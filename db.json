@@ -1,163 +1,178 @@
 [
-    {
-      "id": 1,
-      "image": "https://m.media-amazon.com/images/I/81xCK66iBnL._AC_SX679_.jpg",
-      "name": "X-Wing Fighter",
-      "price": 49.99,
-      "quantity": 20,
-      "category": "Vehicles & Starships",
-      "description": "A detailed replica of the iconic X-Wing Fighter, featuring retractable landing gear and opening cockpit.",
-      "rating": 4.8
-    },
-    {
-      "id": 2,
-      "image": "https://m.media-amazon.com/images/I/81PhO-kyPuL._AC_SX679_.jpg",
-      "name": "Millennium Falcon",
-      "price": 129.99,
-      "quantity": 15,
-      "category": "Vehicles & Starships",
-      "description": "The fastest hunk of junk in the galaxy, perfect for any Star Wars fan's collection.",
-      "rating": 4.9
-    },
-    {
-      "id": 3,
-      "image": "https://m.media-amazon.com/images/I/61idmuskOUL._AC_SX679_.jpg",
-      "name": "Darth Vader Action Figure",
-      "price": 24.99,
-      "quantity": 50,
-      "category": "Action Figures",
-      "description": "A detailed action figure of Darth Vader, complete with a removable cape and lightsaber accessory.",
-      "rating": 4.7
-    },
-    {
-      "id": 4,
-      "image": "https://m.media-amazon.com/images/I/814BBO3+ZWL._AC_SX679_.jpg",
-      "name": "Luke Skywalker Action Figure",
-      "price": 22.99,
-      "quantity": 30,
-      "category": "Action Figures",
-      "description": "Luke Skywalker as seen in *The Empire Strikes Back*, with a lightsaber and blaster accessory.",
-      "rating": 4.6
-    },
-    {
-      "id": 5,
-      "image": "https://m.media-amazon.com/images/I/71l188aC7CL._AC_SX679_.jpg",
-      "name": "Yoda's Lightsaber",
-      "price": 19.99,
-      "quantity": 40,
-      "category": "Lightsabers & Weapons",
-      "description": "A small yet powerful lightsaber replica modeled after Yoda's weapon of choice.",
-      "rating": 4.5
-    },
-    {
-      "id": 6,
-      "image": "https://m.media-amazon.com/images/I/61Moq6C1L-L._AC_SX679_.jpg",
-      "name": "Kylo Ren's Lightsaber",
-      "price": 34.99,
-      "quantity": 25,
-      "category": "Lightsabers & Weapons",
-      "description": "A striking replica of Kylo Ren's cross-guard lightsaber, with light and sound effects.",
-      "rating": 4.8
-    },
-    {
-      "id": 7,
-      "image": "https://m.media-amazon.com/images/I/81qkzvK+HTL._AC_SX679_.jpg",
-      "name": "TIE Fighter",
-      "price": 39.99,
-      "quantity": 18,
-      "category": "Vehicles & Starships",
-      "description": "An accurate model of the Imperial TIE Fighter, featuring wing panels that can detach during battles.",
-      "rating": 4.7
-    },
-    {
-      "id": 8,
-      "image": "https://m.media-amazon.com/images/I/71FxDhGutsL._AC_SX679_.jpg",
-      "name": "Stormtrooper Action Figure",
-      "price": 19.99,
-      "quantity": 60,
-      "category": "Action Figures",
-      "description": "A highly detailed Stormtrooper action figure, complete with a blaster rifle accessory.",
-      "rating": 4.5
-    },
-    {
-        "id": 9,
-        "image": "https://m.media-amazon.com/images/I/61ZZ1lpVljL._AC_SX679_.jpg",
-        "name": "Slave I",
-        "price": 69.99,
-        "quantity": 10,
-        "category": "Vehicles & Starships",
-        "description": "Boba Fett's iconic starship, featuring rotating wings and a cockpit that fits action figures.",
-        "rating": 4.9
-      },
-      {
-        "id": 10,
-        "image": "https://m.media-amazon.com/images/I/8118t3kIlhL._AC_SX679_.jpg",
-        "name": "Rebel Soldier Action Figure",
-        "price": 21.99,
-        "quantity": 45,
-        "category": "Action Figures",
-        "description": "A detailed Rebel Soldier figure, complete with a blaster rifle and battle-ready stance.",
-        "rating": 4.6
-      },
-      {
-        "id": 11,
-        "image": "https://m.media-amazon.com/images/I/61F8mSxdQyL._AC_SX679_.jpg",
-        "name": "Mace Windu's Lightsaber",
-        "price": 29.99,
-        "quantity": 35,
-        "category": "Lightsabers & Weapons",
-        "description": "A stunning replica of Mace Windu's purple lightsaber, featuring light and sound effects.",
-        "rating": 4.7
-      },
-      {
-        "id": 12,
-        "image": "https://m.media-amazon.com/images/I/817jUv36oXL._AC_SX679_.jpg",
-        "name": "Imperial Shuttle",
-        "price": 89.99,
-        "quantity": 12,
-        "category": "Vehicles & Starships",
-        "description": "A collectible model of the Imperial Shuttle, with foldable wings and a detailed cockpit.",
-        "rating": 4.8
-      },
-      {
-        "id": 13,
-        "image": "https://m.media-amazon.com/images/I/61SMcUHlTZL._AC_SX679_.jpg",
-        "name": "Obi-Wan Kenobi Action Figure",
-        "price": 24.99,
-        "quantity": 38,
-        "category": "Action Figures",
-        "description": "An Obi-Wan Kenobi action figure from the Clone Wars, complete with a blue lightsaber accessory.",
-        "rating": 4.8
-      },
-      {
-        "id": 14,
-        "image": "https://m.media-amazon.com/images/I/51YYNQn9n2L._AC_SX679_.jpg",
-        "name": "The Darksaber",
-        "price": 39.99,
-        "quantity": 22,
-        "category": "Lightsabers & Weapons",
-        "description": "A replica of the ancient and unique black-bladed lightsaber wielded by Mandalorians.",
-        "rating": 4.9
-      },
-      {
-        "id": 15,
-        "image": "https://m.media-amazon.com/images/I/915xIkh4lcL._AC_SX679_.jpg",
-        "name": "Speeder Bike",
-        "price": 34.99,
-        "quantity": 20,
-        "category": "Vehicles & Starships",
-        "description": "A high-speed speeder bike model with articulated features for display and play.",
-        "rating": 4.7
-      },
-      {
-        "id": 16,
-        "image": "https://m.media-amazon.com/images/I/71IFaSUHdfL._AC_SX679_.jpg",
-        "name": "Ahsoka Tano Action Figure",
-        "price": 26.99,
-        "quantity": 40,
-        "category": "Action Figures",
-        "description": "Ahsoka Tano in her Clone Wars outfit, featuring dual lightsabers and intricate detailing.",
-        "rating": 4.8
-      }
-  ]
-  
+  {
+    "id": 1,
+    "image": "https://m.media-amazon.com/images/I/81xCK66iBnL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/61GDuoKhgCL._AC_SX679_.jpg",
+    "name": "X-Wing Fighter",
+    "price": 49.99,
+    "quantity": 20,
+    "category": "Vehicles & Starships",
+    "description": "A detailed replica of the iconic X-Wing Fighter, featuring retractable landing gear and opening cockpit.",
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "image": "https://m.media-amazon.com/images/I/81PhO-kyPuL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/7145LvPAjXL._AC_SX679_.jpg",
+    "name": "Millennium Falcon",
+    "price": 129.99,
+    "quantity": 15,
+    "category": "Vehicles & Starships",
+    "description": "The fastest hunk of junk in the galaxy, perfect for any Star Wars fan's collection.",
+    "rating": 4.9
+  },
+  {
+    "id": 3,
+    "image": "https://m.media-amazon.com/images/I/61idmuskOUL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/712Iw6be4cL._AC_SX679_.jpg",
+    "name": "Darth Vader",
+    "price": 24.99,
+    "quantity": 50,
+    "category": "Action Figures",
+    "description": "A detailed action figure of Darth Vader, complete with a removable cape and lightsaber accessory.",
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "image": "https://m.media-amazon.com/images/I/814BBO3+ZWL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/71zYfL6qnNL._AC_SX679_.jpg",
+    "name": "Luke Skywalker",
+    "price": 22.99,
+    "quantity": 30,
+    "category": "Action Figures",
+    "description": "Luke Skywalker as seen in *The Empire Strikes Back*, with a lightsaber and blaster accessory.",
+    "rating": 4.6
+  },
+  {
+    "id": 5,
+    "image": "https://m.media-amazon.com/images/I/71l188aC7CL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/71+WmMy3JtL._AC_SX679_.jpg",
+    "name": "Yoda's Lightsaber",
+    "price": 19.99,
+    "quantity": 40,
+    "category": "Lightsabers & Weapons",
+    "description": "A small yet powerful lightsaber replica modeled after Yoda's weapon of choice.",
+    "rating": 4.5
+  },
+  {
+    "id": 6,
+    "image": "https://m.media-amazon.com/images/I/61Moq6C1L-L._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/7187DfxHZAL._AC_SX679_.jpg",
+    "name": "Kylo Ren's Lightsaber",
+    "price": 34.99,
+    "quantity": 25,
+    "category": "Lightsabers & Weapons",
+    "description": "A striking replica of Kylo Ren's cross-guard lightsaber, with light and sound effects.",
+    "rating": 4.8
+  },
+  {
+    "id": 7,
+    "image": "https://m.media-amazon.com/images/I/81qkzvK+HTL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/81C+d7YRkqL._AC_SX679_.jpg",
+    "name": "TIE Fighter",
+    "price": 39.99,
+    "quantity": 18,
+    "category": "Vehicles & Starships",
+    "description": "An accurate model of the Imperial TIE Fighter, featuring wing panels that can detach during battles.",
+    "rating": 4.7
+  },
+  {
+    "id": 8,
+    "image": "https://m.media-amazon.com/images/I/71FxDhGutsL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/81vPtFLmUwL._AC_SX679_.jpg",
+    "name": "Stormtrooper",
+    "price": 19.99,
+    "quantity": 60,
+    "category": "Action Figures",
+    "description": "A highly detailed Stormtrooper action figure, complete with a blaster rifle accessory.",
+    "rating": 4.5
+  },
+  {
+    "id": 9,
+    "image": "https://m.media-amazon.com/images/I/61ZZ1lpVljL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/71ao5bENb0L._AC_SX679_.jpg",
+    "name": "Slave I",
+    "price": 69.99,
+    "quantity": 10,
+    "category": "Vehicles & Starships",
+    "description": "Boba Fett's iconic starship, featuring rotating wings and a cockpit that fits action figures.",
+    "rating": 4.9
+  },
+  {
+    "id": 10,
+    "image": "https://m.media-amazon.com/images/I/8118t3kIlhL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/71UrlD9wjHL._AC_SX679_.jpg",
+    "name": "Rebel Soldier",
+    "price": 21.99,
+    "quantity": 45,
+    "category": "Action Figures",
+    "description": "A detailed Rebel Soldier figure, complete with a blaster rifle and battle-ready stance.",
+    "rating": 4.6
+  },
+  {
+    "id": 11,
+    "image": "https://m.media-amazon.com/images/I/51urR-ieASS._AC_SY879_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/61F8mSxdQyL._AC_SX679_.jpg ",
+    "name": "Mace Windu's Lightsaber",
+    "price": 29.99,
+    "quantity": 35,
+    "category": "Lightsabers & Weapons",
+    "description": "A stunning replica of Mace Windu's purple lightsaber, featuring light and sound effects.",
+    "rating": 4.7
+  },
+  {
+    "id": 12,
+    "image": "https://m.media-amazon.com/images/I/817jUv36oXL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/81Y5GYdZdBL._AC_SX679_.jpg",
+    "name": "Imperial Shuttle",
+    "price": 89.99,
+    "quantity": 12,
+    "category": "Vehicles & Starships",
+    "description": "A collectible model of the Imperial Shuttle, with foldable wings and a detailed cockpit.",
+    "rating": 4.8
+  },
+  {
+    "id": 13,
+    "image": "https://m.media-amazon.com/images/I/61SMcUHlTZL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/61UfvhAuC2L._AC_SX679_.jpg",
+    "name": "Obi-Wan Kenobi",
+    "price": 24.99,
+    "quantity": 38,
+    "category": "Action Figures",
+    "description": "An Obi-Wan Kenobi action figure from the Clone Wars, complete with a blue lightsaber accessory.",
+    "rating": 4.8
+  },
+  {
+    "id": 14,
+    "image": "https://m.media-amazon.com/images/I/81mUCkBYSSL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/61isx7bdujL._AC_SX679_.jpg",
+    "name": "The Darksaber",
+    "price": 39.99,
+    "quantity": 22,
+    "category": "Lightsabers & Weapons",
+    "description": "A replica of the ancient and unique black-bladed lightsaber wielded by Mandalorians.",
+    "rating": 4.9
+  },
+  {
+    "id": 15,
+    "image": "https://m.media-amazon.com/images/I/915xIkh4lcL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/61l3y33zYHL._AC_SX679_.jpg",
+    "name": "Speeder Bike",
+    "price": 34.99,
+    "quantity": 20,
+    "category": "Vehicles & Starships",
+    "description": "A high-speed speeder bike model with articulated features for display and play.",
+    "rating": 4.7
+  },
+  {
+    "id": 16,
+    "image": "https://m.media-amazon.com/images/I/71IFaSUHdfL._AC_SX679_.jpg",
+    "hoverImage": "https://m.media-amazon.com/images/I/61wJ37kZz5L._AC_SX679_.jpg",
+    "name": "Ahsoka Tano",
+    "price": 26.99,
+    "quantity": 40,
+    "category": "Action Figures",
+    "description": "Ahsoka Tano in her Clone Wars outfit, featuring dual lightsabers and intricate detailing.",
+    "rating": 4.8
+  }
+]
