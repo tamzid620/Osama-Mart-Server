@@ -8,13 +8,15 @@ const app = express();
 const port = 7000;
 
 const corsOptions = {
-  origin: ['http://localhost:3000','https://osama-mart-server.vercel.app/' ] ,// Frontend URL
+  origin: ['http://localhost:3000','https://osama-mart-server.vercel.app/' ,'https://osama-mart.vercel.app/'] ,// Frontend URL
   optionsSuccessStatus: 200,
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization',
   credentials: true, // Allow cookies or authorization headers if needed
 };
 app.use(cors(corsOptions));
+app.use(express.json()); // Parse JSON requests
+app.use(express.urlencoded({ extended: true })); 
 
 const dbUsername = process.env.DB_USERNAME || 'defaultUsername';
 const dbPassword = process.env.DB_PASSWORD || 'defaultPassword';
