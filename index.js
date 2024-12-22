@@ -16,12 +16,11 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-const dbUsername = process.env.DB_USERNAME;
-const dbPassword = process.env.DB_PASSWORD;
-const dbName = process.env.DB_NAME;
+const dbUsername = process.env.DB_USERNAME || 'defaultUsername';
+const dbPassword = process.env.DB_PASSWORD || 'defaultPassword';
+const dbName = process.env.DB_NAME || 'defaultDBName';
 
-
-const uri = `mongodb+srv://${dbUsername}:${dbPassword}@cluster0.qtemx5j.mongodb.net/${dbName}?retryWrites=true&w=majority&appName=Cluster0`
+const uri = `mongodb+srv://${dbUsername}:${dbPassword}@cluster0.qtemx5j.mongodb.net/${dbName}?retryWrites=true&w=majority&appName=Cluster0`;
 
 const client = new MongoClient(uri);
 
