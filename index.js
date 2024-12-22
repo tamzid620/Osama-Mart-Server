@@ -8,7 +8,7 @@ const app = express();
 const port = 7000;
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // Frontend URL
+  origin: ['http://localhost:3000','https://osama-mart-server.vercel.app/' ] ,// Frontend URL
   optionsSuccessStatus: 200,
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization',
