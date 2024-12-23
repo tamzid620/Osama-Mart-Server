@@ -7,14 +7,14 @@ dotenv.config();
 const app = express();
 const port = 7000;
 
-const corsOptions = {
-  origin: ['http://localhost:3000','https://osama-mart-server.vercel.app/' ,'https://osama-mart.vercel.app/'] ,// Frontend URL
-  optionsSuccessStatus: 200,
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type,Authorization',
-  credentials: true, // Allow cookies or authorization headers if needed
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: ['http://localhost:3000'] ,
+//   optionsSuccessStatus: 200,
+//   methods: 'GET,POST,PUT,DELETE',
+//   allowedHeaders: 'Content-Type,Authorization',
+//   credentials: true, 
+// };
+app.use(cors());
 app.use(express.json()); // Parse JSON requests
 app.use(express.urlencoded({ extended: true })); 
 
