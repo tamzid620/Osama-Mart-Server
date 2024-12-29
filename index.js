@@ -1,8 +1,8 @@
 const dotenv = require('dotenv');
 const express = require('express');
-const { MongoClient } = require('mongodb');
+const { MongoClient } = require('mongodb'); 
 const cors = require('cors');
-const multer = require('multer');
+// const multer = require('multer');
 const path = require('path');
 
 dotenv.config();
@@ -16,17 +16,6 @@ const corsOptions = {
   allowedHeaders: 'Content-Type,Authorization',
   credentials: true, 
 };
-
-// Setup multer for file upload
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Folder where the files will be stored
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Unique filename with extension
-  },
-});
-const upload = multer({ storage: storage });
 
 app.use(cors(corsOptions));
 app.use(express.json()); // Parse JSON requests
@@ -52,7 +41,7 @@ client.connect()
   .catch((error) => {
     console.error('Error connecting to MongoDB:', error);
   });
-// -------------------------------------------
+// ---------------------------------------- Api section  ----------------------------------------------------------
 app.get('/all-toys', (req, res) => {
   allToysCollection.find().toArray()
     .then((data) => res.json(data))
@@ -87,42 +76,39 @@ app.get('/all-toys/:id', (req, res) => {
 });
 
 // --------------------------------------------------------------------------------------------------------------
-app.post('/update-toys/', upload.fields([
-  { name: 'image', maxCount: 1 }, 
-  { name: 'hoverImage', maxCount: 1 }
-]), (req, res) => {
-  const { id, name, price, quantity, category, rating, description } = req.body;
-  const image = req.files['image'] ? req.files['image'][0].filename : null;
-  const hoverImage = req.files['hoverImage'] ? req.files['hoverImage'][0].filename : null;
 
-  const toyData = {
-    name,
-    price,
-    quantity,
-    category,
-    rating,
-    description,
-    image: image,
-    hoverImage: hoverImage,
-  };
+app.put('/all-toys/:id', (req, res) => {
+  const toyId = parseInt(req.params.id); 
+  const updatedData = req.body; 
 
-  // Update the toy in the database by its ID
-  allToysCollection.updateOne(
-    { _id: new MongoClient.ObjectId(id) }, // Use MongoDB ObjectId for matching
-    { $set: toyData }
-  )
+  if (!toyId || typeof toyId !== 'number') {
+    return res.status(400).json({ message: 'Invalid toy ID' });
+  }
+
+  delete updatedData._id;
+
+  if (!updatedData || Object.keys(updatedData).length === 0) {
+    return res.status(400).json({ message: 'No data provided for update' });
+  }
+
+  allToysCollection
+    .updateOne(
+      { id: toyId }, 
+      { $set: updatedData } 
+    )
     .then((result) => {
-      if (result.modifiedCount > 0) {
-        res.status(200).json({ message: 'Toy updated successfully!' });
-      } else {
-        res.status(404).json({ message: 'Toy not found or no changes made' });
+      if (result.matchedCount === 0) {
+        return res.status(404).json({ message: 'Toy not found' });
       }
+      res.json({ message: 'Toy updated successfully', result });
     })
     .catch((error) => {
       console.error('Error updating toy:', error);
-      res.status(500).json({ message: 'Error updating toy' });
+      res.status(500).json({ message: 'Error updating toy', error });
     });
 });
+
+
 
 // --------------------------------------------------------------------------------------------------------------
 
