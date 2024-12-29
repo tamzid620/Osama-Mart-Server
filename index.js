@@ -41,7 +41,7 @@ client.connect()
   .catch((error) => {
     console.error('Error connecting to MongoDB:', error);
   });
-// ---------------------------------------- Api section  ----------------------------------------------------------
+// ---------------------------------------- Api section  start ----------------------------------------------------------
 app.get('/all-toys', (req, res) => {
   allToysCollection.find().toArray()
     .then((data) => res.json(data))
@@ -59,6 +59,7 @@ app.get('/special-gallery', (req, res) => {
     });
 });
 
+// get all toy-----------
 app.get('/all-toys/:id', (req, res) => {
   const toyId = req.params.id;
   allToysCollection.findOne({ id: parseInt(toyId) })
@@ -75,7 +76,7 @@ app.get('/all-toys/:id', (req, res) => {
     });
 });
 
-// --------------------------------------------------------------------------------------------------------------
+// update all toy-----------
 
 app.put('/all-toys/:id', (req, res) => {
   const toyId = parseInt(req.params.id); 
@@ -108,9 +109,25 @@ app.put('/all-toys/:id', (req, res) => {
     });
 });
 
+// Add all toy-----------
+
+app.post('/all-toys', (req, res) => {
+  const newToy = req.body;
 
 
-// --------------------------------------------------------------------------------------------------------------
+  allToysCollection
+    .insertOne(newToy)
+    .then((result) => {
+      res.status(201).json({ message: 'Toy added successfully', result });
+    })
+    .catch((error) => {
+      console.error('Error adding toy:', error);
+      res.status(500).json({ message: 'Error adding toy', error });
+    });
+});
+
+
+// ------------------------------------------- Api section  end------------------------------------------------
 
 //////////////////////////////////////////////////////////////////
 app.get('/', (req, res) => {
