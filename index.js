@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 7000;
 
 const corsOptions = {
-  origin: ['http://localhost:3000'] ,
+  origin: ['http://localhost:3000' , 'https://osama-mart.vercel.app/'] ,
   optionsSuccessStatus: 200,
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization',
