@@ -7,7 +7,7 @@ const path = require('path');
 
 dotenv.config();
 const app = express();
-const port = 7000;
+const port = process.env.PORT || 7000;
 
 const corsOptions = {
   origin: ['http://localhost:3000'] ,
