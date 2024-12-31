@@ -22,9 +22,9 @@ app.use(express.json()); // Parse JSON requests
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static('uploads'));
 
-const dbUsername = "osamaMart";
-const dbPassword = "YAmQHpjlXhPN6sON";
-const dbName = "osamaMart";
+const dbUsername = process.env.DB_USERNAME || osamaMart;
+const dbPassword = process.env.DB_PASSWORD || YAmQHpjlXhPN6sON;
+const dbName = process.env.DB_NAME || osamaMart;
 
 const uri = `mongodb+srv://${dbUsername}:${dbPassword}@cluster0.qtemx5j.mongodb.net/${dbName}?retryWrites=true&w=majority&appName=Cluster0`;
 
