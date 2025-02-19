@@ -4,6 +4,7 @@ const { MongoClient } = require('mongodb');
 const cors = require('cors');
 // const multer = require('multer');
 const path = require('path');
+const { ObjectId } = require("mongodb");
 
 dotenv.config();
 const app = express();
@@ -108,6 +109,31 @@ app.put('/all-toys/:id', (req, res) => {
       res.status(500).json({ message: 'Error updating toy', error });
     });
 });
+
+
+// Delete toy by id --------------
+
+app.delete('/all-toys/:_id', async (req, res) => {
+  try {
+    const toyId = req.params._id;
+    
+    if (!ObjectId.isValid(toyId)) {
+      return res.status(400).json({ message: 'Invalid ID format' });
+    }
+
+    const result = await allToysCollection.deleteOne({ _id: new ObjectId(toyId) });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: 'Toy not found' });
+    }
+
+    res.json({ message: 'Toy deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting toy:', error);
+    res.status(500).json({ message: 'Error deleting toy', error });
+  }
+});
+
 
 // Add all toy-----------
 
