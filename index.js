@@ -11,12 +11,28 @@ const app = express();
 const port = process.env.PORT || 7000;
 
 const corsOptions = {
-  origin: ['http://localhost:3000' , 'https://osama-mart.vercel.app'] ,
   optionsSuccessStatus: 200,
-  methods: 'GET,POST,PUT,DELETE',
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: 'Content-Type,Authorization',
   credentials: true, 
 };
+
+const allowedOrigins = [
+  'http://localhost:3001',
+  'https://osama-mart.vercel.app'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
+
 
 app.use(cors(corsOptions));
 app.use(express.json()); // Parse JSON requests
