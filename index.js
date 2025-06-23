@@ -31,8 +31,9 @@ const uri = `mongodb+srv://${dbUsername}:${dbPassword}@cluster0.qtemx5j.mongodb.
 
 const client = new MongoClient(uri);
 
-let allToysCollection;
 ////////////////////////////////////////////////
+let allToysCollection;
+
 client.connect()
   .then(() => {
     const db = client.db(dbName);
@@ -42,7 +43,8 @@ client.connect()
   .catch((error) => {
     console.error('Error connecting to MongoDB:', error);
   });
-// ---------------------------------------- Api section  start ----------------------------------------------------------
+
+// ------------------------------------- Api section  start ---------------------------------------------------
 app.get('/all-toys', (req, res) => {
   allToysCollection.find().toArray()
     .then((data) => res.json(data))
@@ -51,6 +53,7 @@ app.get('/all-toys', (req, res) => {
       res.status(500).json({ message: 'Error fetching data' });
     });
 });
+
 app.get('/special-gallery', (req, res) => {
   specialGalleryCollection.find().toArray()
     .then((data) => res.json(data))
