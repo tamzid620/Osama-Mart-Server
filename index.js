@@ -10,31 +10,37 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 7000;
 
-const corsOptions = {
-  optionsSuccessStatus: 200,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  allowedHeaders: 'Content-Type,Authorization',
-  credentials: true, 
-};
-
-const allowedOrigins = [
-  'http://localhost:3001',
-  'https://osama-mart.vercel.app'
-];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
+  origin: ["https://osama-mart.vercel.app","http://localhost:3000"],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  credentials: true
 }));
 
+// const corsOptions = {
+//   optionsSuccessStatus: 200,
+//   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+//   allowedHeaders: 'Content-Type,Authorization',
+//   credentials: true, 
+// };
 
-app.use(cors(corsOptions));
+// const allowedOrigins = [
+//   'http://localhost:3001',
+//   'https://osama-mart.vercel.app'
+// ];
+
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   credentials: true,
+// }));
+
+
+// app.use(cors(corsOptions));
 app.use(express.json()); // Parse JSON requests
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static('uploads'));
