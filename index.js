@@ -11,7 +11,7 @@ const app = express();
 const port = 7000;
 
 app.use(cors({
-  origin: ["https://osama-mart.vercel.app"],
+  origin: ["*"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   credentials: true
 }));
