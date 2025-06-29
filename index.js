@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 const express = require('express');
-const { MongoClient } = require('mongodb'); 
+const { MongoClient } = require('mongodb');
 const cors = require('cors');
 // const multer = require('multer');
 const path = require('path');
@@ -10,11 +10,20 @@ dotenv.config();
 const app = express();
 const port = 7000;
 
+// app.use(cors({
+//   origin: ["*"],
+//   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: ["*"],
+  origin: (_origin, callback) => {
+    callback(null, true);
+  },
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   credentials: true
 }));
+
 
 // const corsOptions = {
 //   optionsSuccessStatus: 200,
@@ -46,7 +55,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static('uploads'));
 
 const dbUsername = process.env.DB_USERNAME;
-const dbPassword = process.env.DB_PASSWORD ;
+const dbPassword = process.env.DB_PASSWORD;
 const dbName = process.env.DB_NAME;
 
 const uri = `mongodb+srv://${dbUsername}:${dbPassword}@cluster0.qtemx5j.mongodb.net/${dbName}?retryWrites=true&w=majority&appName=Cluster0`;
@@ -105,8 +114,8 @@ app.get('/all-toys/:id', (req, res) => {
 // update all toy-----------
 
 app.put('/all-toys/:id', (req, res) => {
-  const toyId = parseInt(req.params.id); 
-  const updatedData = req.body; 
+  const toyId = parseInt(req.params.id);
+  const updatedData = req.body;
 
   if (!toyId || typeof toyId !== 'number') {
     return res.status(400).json({ message: 'Invalid toy ID' });
@@ -120,8 +129,8 @@ app.put('/all-toys/:id', (req, res) => {
 
   allToysCollection
     .updateOne(
-      { id: toyId }, 
-      { $set: updatedData } 
+      { id: toyId },
+      { $set: updatedData }
     )
     .then((result) => {
       if (result.matchedCount === 0) {
@@ -141,7 +150,7 @@ app.put('/all-toys/:id', (req, res) => {
 app.delete('/all-toys/:_id', async (req, res) => {
   try {
     const toyId = req.params._id;
-    
+
     if (!ObjectId.isValid(toyId)) {
       return res.status(400).json({ message: 'Invalid ID format' });
     }
