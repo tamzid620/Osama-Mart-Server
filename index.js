@@ -50,6 +50,26 @@ app.use(cors({
 
 
 // app.use(cors(corsOptions));
+
+// ✅ Safer CORS configuration
+const allowedOrigins = [
+  'http://localhost:3001',
+  'https://osama-mart.vercel.app'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
+}));
+
+// ✅ Middleware --------------------------
 app.use(express.json()); // Parse JSON requests
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static('uploads'));
@@ -63,7 +83,8 @@ const uri = `mongodb+srv://${dbUsername}:${dbPassword}@cluster0.qtemx5j.mongodb.
 const client = new MongoClient(uri);
 
 ////////////////////////////////////////////////
-let allToysCollection;
+// ✅ Declare collections
+let allToysCollection, specialGalleryCollection;
 
 client.connect()
   .then(() => {
