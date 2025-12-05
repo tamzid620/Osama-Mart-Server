@@ -53,7 +53,7 @@ app.use(cors({
 
 // ✅ Safer CORS configuration
 const allowedOrigins = [
-  'http://localhost:3001',
+  'http://localhost:3000',
   'https://osama-mart.vercel.app'
 ];
 
