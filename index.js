@@ -86,16 +86,23 @@ const client = new MongoClient(uri);
 // ✅ Declare collections
 let allToysCollection, specialGalleryCollection;
 
-client.connect()
-  .then(() => {
-    const db = client.db(dbName);
-    allToysCollection = db.collection('alltoys');
-    specialGalleryCollection = db.collection('specialGallary');
-  })
-  .catch((error) => {
-    console.error('Error connecting to MongoDB:', error);
-  });
+// client.connect()
+//   .then(() => {
+//     const db = client.db(dbName);
+//     allToysCollection = db.collection('alltoys');
+//     specialGalleryCollection = db.collection('specialGallary');
+//   })
+//   .catch((error) => {
+//     console.error('Error connecting to MongoDB:', error);
+//   });
 
+  async function connectDB() {
+  await client.connect();
+  const db = client.db(dbName);
+  allToysCollection = db.collection('alltoys');
+  specialGalleryCollection = db.collection('specialGallary');
+  console.log('✅ Connected to MongoDB');
+}
 // ------------------------------------- Api section  start ---------------------------------------------------
 app.get('/all-toys', (req, res) => {
   allToysCollection.find().toArray()
@@ -215,6 +222,11 @@ app.get('/', (req, res) => {
   res.send('Express js connect successfully!');
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
+connectDB().then(() => {
+  app.listen(port, () => {
+    console.log(`🚀 Server running on port ${port}`);
+  });
 });
